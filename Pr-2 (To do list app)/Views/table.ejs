@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Users</title>
+</head>
+
+<body>
+    <h1>View Tasks</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Task</th>
+                <th>Status</th>
+                <th>Deadline</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% record.map((val, i) => { %>
+                <tr>
+                    <td><%= val.id %></td>
+                    <td><%= val.task %></td>
+                    <td><%= val.status %></td>
+                    <td><%= val.deadline %></td>
+                    <td>
+                        <a href="/deleteuser?deleteId=<%= val.id %>" class="deletedata" style="color: red">Delete</a>
+                        <a href="/edituser?id=<%= val.id %>" class="editdata" style="color:blue">Edit</a>
+                    </td>
+                </tr>
+            <% }) %>
+        </tbody>
+    </table>
+
+    <div class="add">
+        <a href="./form">Add Task</a>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Task</title>
+</head>
+
+<body>
+    <div class="form-container">
+        <h2>Edit Task</h2>
+        <form action="./updateuser" method="post">
+            <!-- Hidden Field for Task ID -->
+            <input type="hidden" name="editid" value="<%= single.id %>">
+
+            <label for="taskName">Task Name:</label>
+            <input type="text" id="taskName" name="usertask" placeholder="Enter task name" value="<%= single.task %>" required pattern="[A-Za-z ]+" title="Name must only contain letters and spaces">
+
+            <label for="status">Status:</label>
+            <input type="text" id="status" name="userstatus" placeholder="Enter status" value="<%= single.status %>" required pattern="[A-Za-z ]+" title="Name must only contain letters and spaces">
+
+            <label for="deadline">Deadline:</label>
+            <input type="datetime-local" id="deadline" name="deadline" value="<%= single.deadline %>" required>
+
+            <input type="submit" value="Update Task">
+        </form>
+
+        <div class="view">
+            <a href="./table">View Tasks</a>
+        </div>
+    </div>
+</body>
+
+</html>
